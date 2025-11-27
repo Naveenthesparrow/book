@@ -49,7 +49,7 @@ const upload = multer({
 // Middleware
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-app.use('/uploads', express.static('uploads')); // Serve uploaded files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
 app.use(express.urlencoded({ extended: true }));
 
 // Helper to read books
